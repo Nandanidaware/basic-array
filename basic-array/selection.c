@@ -15,7 +15,7 @@ int main()
 		int m=i;
 		for(int j=i+1;j<n;j++)
 		{
-			if(a[i]>a[m])
+			if(a[j]>a[m])
 			{
 				m=j;
 			}
