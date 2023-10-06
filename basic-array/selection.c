@@ -1,67 +1,30 @@
-//SELECTION SORT
-//Ascending Order 
+//Selection sort
 
 #include<stdio.h>
 int main()
 {
-	int N;
-	printf("ENTER THE ARRAY SIZE:- ");
-	scanf("%d",&N);
-	int arr[N];
-	for(int i=0;i<N;i++)
+	int n;
+	scanf("%d",&n);
+	int a[n];
+	for(int i=0;i<n-1;i++)
 	{
-		printf("ENTER THE  ELEMENTS:- ");
-		scanf("%d",&arr[i]);
-	}
-	for(int i=0;i<N;i++)
-	{
-		for(int j=i+1;j<N;j++)
+		int m=i;
+		for(int j=i+1;j<n;j++)
 		{
-			if(arr[i]>arr[j])
+			if(a[i]>a[m])
 			{
-				int temp=arr[i];
-				arr[i]=arr[j];
-				arr[j]=temp;
+				m=j;
 			}
 		}
-		printf("\n");
-	}
-	for(int i=0;i<N;i++)
-	{
-		printf("%d ",arr[i]);
-	}
-	return 0;
-}
-
-//Selection sort in Decending order
-#include<stdio.h>
-int main()
-{
-	int N;
-	printf("ENTER THE ARRAY SIZE:- ");
-	scanf("%d",&N);
-	int arr[N];
-	for(int i=0;i<N;i++)
-	{
-		printf("ENTER THE  ELEMENTS:- ");
-		scanf("%d",&arr[i]);
-	}
-	for(int i=0;i<N;i++)
-	{
-		for(int j=i+1;j<N;j++)
+		if(m!=i)
 		{
-			if(arr[i]<arr[j])
-			{
-				int temp=arr[i];
-				arr[i]=arr[j];
-				arr[j]=temp;
-			}
+			int temp=a[i];
+			a[i]=a[m];
+			a[m]=temp;
 		}
-		printf("\n");
 	}
-	for(int i=0;i<N;i++)
+	for(int i=0;i<n;i++)
 	{
-		printf("%d ",arr[i]);
+		printf("%c ",a[i]);	
 	}
-	return 0;
 }
